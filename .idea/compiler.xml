@@ -7,13 +7,17 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="MusicStoreManagement" />
+        <module name="MusicStoreManagement (1)" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="MusicStoreManagement" target="17" />
+    </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="MusicStoreManagement" options="-parameters" />
+      <module name="MusicStoreManagement (1)" options="-parameters" />
     </option>
   </component>
 </project>
