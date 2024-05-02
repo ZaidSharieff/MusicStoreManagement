@@ -16,23 +16,20 @@ public class GlobalExceptionHandler {
         ExceptionDto dto = new ExceptionDto();
         dto.setMessage("Something went wrong");
         dto.setResolution("Product not found exception");
-        ResponseEntity<ExceptionDto> response = new ResponseEntity<>(dto, HttpStatus.NOT_FOUND);
-        return response;
+        return new ResponseEntity<>(dto, HttpStatus.NOT_FOUND);
     }
     @ExceptionHandler(CategoryNotFoundException.class)
     public ResponseEntity handleCategoryNotFoundException() {
         ExceptionDto dto = new ExceptionDto();
         dto.setMessage("Something went wrong");
         dto.setResolution("Category not found exception");
-        ResponseEntity<ExceptionDto> response = new ResponseEntity<>(dto, HttpStatus.NOT_FOUND);
-        return response;
+        return new ResponseEntity<>(dto, HttpStatus.NOT_FOUND);
     }
     @ExceptionHandler(SupplierNotFoundException.class)
     public ResponseEntity handleSupplierNotFoundException() {
         ExceptionDto dto = new ExceptionDto();
         dto.setMessage("Something went wrong");
         dto.setResolution("Supplier not found exception");
-        ResponseEntity<ExceptionDto> response = new ResponseEntity<>(dto, HttpStatus.NOT_FOUND);
-        return response;
+        return new ResponseEntity<>(dto, HttpStatus.NOT_FOUND);
     }
 }

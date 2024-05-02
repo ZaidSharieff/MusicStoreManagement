@@ -19,10 +19,4 @@ public interface UserRepository extends JpaRepository<Customer,Long> {
      void delete(Customer customer);
      @Override
      Customer save(Customer customer);
-//    @Query("select p.title as title, p.description as description from Product p where p.id = :id")
-//    CustomerWithTitleAndDescription someRandomQuery(@Param("id") Long id);
-//
-//    //SQL Query -> native query
-//    @Query(value = "select title, description from product where id = :id", nativeQuery = true)
-//    CustomerWithTitleAndDescription someOtherRandomQuery(@Param("id") Long id);
 }

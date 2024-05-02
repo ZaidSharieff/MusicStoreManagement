@@ -17,7 +17,4 @@ public class Customer {
     Long customer_ID;
     String name;
     Long contact_Number;
-//    @OneToMany
-//    List<Purchase> purchaseHistory;
-
 }

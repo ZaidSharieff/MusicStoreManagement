@@ -21,7 +21,4 @@ public class Product {
     @ManyToOne
     private Supplier supplier;
     private Long stockLevel;
-
-
-
 }

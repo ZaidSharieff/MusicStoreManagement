@@ -1,12 +1,10 @@
 package com.zaid.musicstoremanagement.dtos;
 
-//import com.zaid.musicstoremanagement.models.Popularity;
 import lombok.Getter;
 import lombok.Setter;
 
 @Getter
 @Setter
-
 public class ProductDto {
     private String name;
     private String description;

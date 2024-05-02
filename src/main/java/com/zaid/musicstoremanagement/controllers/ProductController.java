@@ -4,15 +4,12 @@ import com.zaid.musicstoremanagement.dtos.ProductDto;
 import com.zaid.musicstoremanagement.exceptions.CategoryNotFoundException;
 import com.zaid.musicstoremanagement.exceptions.ProductNotFoundException;
 import com.zaid.musicstoremanagement.exceptions.SupplierNotFoundException;
-import com.zaid.musicstoremanagement.models.Category;
 import com.zaid.musicstoremanagement.models.Product;
-import com.zaid.musicstoremanagement.repositories.CategoryRepository;
 import com.zaid.musicstoremanagement.services.ProductService;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Optional;
 
 @RestController
 @RequestMapping("/products")
@@ -45,7 +42,6 @@ public class ProductController {
     @DeleteMapping("/{id}")
     public void deleteProductById(@PathVariable Long id) throws ProductNotFoundException {
         productService.deleteProduct(id);
-        return;
     }
     @PostMapping
     public Product addProduct(@RequestBody Product product) throws CategoryNotFoundException, SupplierNotFoundException {

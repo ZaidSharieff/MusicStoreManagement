@@ -21,6 +21,4 @@ public interface ProductRepository extends JpaRepository<Product, Long> {
     @Override
     void delete(Product product);
     List<Product> findAllByOrderByPrice();
-
-
 }

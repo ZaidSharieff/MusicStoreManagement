@@ -14,10 +14,8 @@ public class Purchase {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-
     @ManyToOne
     private Customer customer;
-
     private Integer quantity;
     private LocalDateTime purchaseDate;
 }
