@@ -83,6 +83,6 @@ Harsh Kumar (harsh-kumar-patwa) - harshkumar3446@gmail.com
 Zaid Sharieff (ZaidSharieff) - zaid.23bcs10120@sst.scaler.com
 Abhinav Narayan (AbhinavKRN) - abhinavv2005@gmail.com
 V Shravanth (CodingWithError) - vshravanth2004@gmail.com
-Abhay Raj (<MISSING>) - <MISSING>
+Abhay Raj (BarryByte) - abhay.23bcs10181@sst.scaler.com
 
 Project Link: [https://github.com/ZaidSharieff/MusicStoreManagement](https://github.com/ZaidSharieff/MusicStoreManagement)
