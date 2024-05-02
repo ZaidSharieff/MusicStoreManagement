@@ -1,5 +1,7 @@
 package com.zaid.musicstoremanagement.models;
 
+import java.util.List;
+
 import jakarta.persistence.*;
 import jakarta.persistence.Id;
 import lombok.Getter;
@@ -12,7 +14,7 @@ import lombok.Setter;
 public class Product {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long productId;
+    private Long id;
     private String name;
     private String description;
     private double price;
@@ -21,7 +23,8 @@ public class Product {
     @ManyToOne
     private Supplier supplier;
     private Long stockLevel;
-
+    @OneToMany(mappedBy = "product")
+    private List<Transaction> transactions;
 
 
 }

@@ -48,7 +48,8 @@ public class OurProductService implements ProductService {
         //if the category, which is passed in product by client , is not present in database
         //then we are saving the category in the category database
 
-        if (category.getCategoryId() == null) {
+        //TODO
+        if (category.getId() == null) {
             product.setCategory(categoryRepository.save(category));
         }
 
@@ -59,10 +60,10 @@ public class OurProductService implements ProductService {
         System.out.println("Worked till supplier.");
 
         //now saving the product to product database
-        Optional<Category> optionalCategory = categoryRepository.findById(category.getCategoryId());
+        Optional<Category> optionalCategory = categoryRepository.findById(category.getId());
         Optional<Supplier> optionalSupplier = supplierRepository.findById(supplier.getSupplierId());
         if (optionalCategory.isEmpty()) {
-            throw new CategoryNotFoundException("Category with this CategoryId"+ category.getCategoryId() +"does not exist");
+            throw new CategoryNotFoundException("Category with this CategoryId"+ category.getId() +"does not exist");
         }
         if(optionalSupplier.isEmpty()){
             throw new SupplierNotFoundException("Supplier with this SupplierId"+ supplier.getSupplierId() +"does not exist");
@@ -81,7 +82,7 @@ public class OurProductService implements ProductService {
     }
     @Override
     public List<Product> getProductsByCategory(Long id) throws CategoryNotFoundException {
-        List<Product> allProducts = productRepository.findAllByCategory_categoryId(id);
+        List<Product> allProducts = productRepository.findAllByCategory_id(id);
         if(allProducts.isEmpty()){
             throw new CategoryNotFoundException("Category not present in the database");
         }
@@ -91,7 +92,7 @@ public class OurProductService implements ProductService {
     @Override
     public Product updateProduct(Product product) throws ProductNotFoundException {
         //getting the id of the product which needs to be updated
-        Long productId = product.getProductId();
+        Long productId = product.getId();
 
         // Retrieving the existing product from the database
         Optional<Product> existingProductOptional = productRepository.findById(productId);

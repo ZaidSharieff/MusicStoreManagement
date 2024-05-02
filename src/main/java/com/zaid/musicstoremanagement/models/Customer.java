@@ -1,12 +1,11 @@
 package com.zaid.musicstoremanagement.models;
 
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
+
+import java.util.List;
 
 @Getter
 @Setter
@@ -14,10 +13,9 @@ import lombok.Setter;
 public class Customer {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    Long customer_ID;
+    Long id;
     String name;
     Long contact_Number;
-//    @OneToMany
-//    List<Purchase> purchaseHistory;
-
+    @OneToMany(mappedBy = "customer")
+    private List<Transaction> transactions;
 }
