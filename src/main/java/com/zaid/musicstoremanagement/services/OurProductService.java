@@ -127,9 +127,7 @@ public class OurProductService implements ProductService {
         }
     }
 
-
     public List<Product> sortProductsByPrice() throws ProductNotFoundException {
-
         List<Product> orderedProducts = productRepository.findAllByOrderByPrice();
         if(orderedProducts.isEmpty()){
             throw new ProductNotFoundException("Product not present");
@@ -138,7 +136,5 @@ public class OurProductService implements ProductService {
         return orderedProducts;
 
     }
-
-
 }
 

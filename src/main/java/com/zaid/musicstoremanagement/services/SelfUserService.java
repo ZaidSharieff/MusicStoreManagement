@@ -13,13 +13,12 @@ import java.util.Optional;
 public class SelfUserService implements UserService {
     private CustomerRepository customerRepository;
 
-
     SelfUserService(CustomerRepository customerRepository) {
         this.customerRepository = customerRepository;
 
     }
     @Override
-    public Customer getcustomerbyId(Long Id) throws CustomerNotFoundException {
+    public Customer getCustomerById(Long Id) throws CustomerNotFoundException {
         Optional<Customer> optionalUser = customerRepository.findById(Id);
 
         if (optionalUser.isEmpty()) {
@@ -27,14 +26,12 @@ public class SelfUserService implements UserService {
         }
 
         return optionalUser.get();
-
     }
 
     @Override
-    public List<Customer> getAllCustomer() {
+    public List<Customer> getAllCustomers() {
         List<Customer> allUser = customerRepository.findAll();
         return allUser;
-
     }
 
     @Override
@@ -58,7 +55,6 @@ public class SelfUserService implements UserService {
             // Handle the case where the User  with the given ID does not exist
             // You might throw an exception or return null, depending on your requirements
             throw new CustomerNotFoundException(id, "User not found, check if the User exits");
-
         }
     }
 

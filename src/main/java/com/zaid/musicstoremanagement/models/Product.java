@@ -25,6 +25,4 @@ public class Product {
     private Long stockLevel;
     @OneToMany(mappedBy = "product")
     private List<Transaction> transactions;
-
-
 }
